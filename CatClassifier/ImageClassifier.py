@@ -94,7 +94,7 @@ def L_layer_model(X, Y, layers_dims, learning_rate = 0.0075, num_iterations = 30
 
         # Parameters initialization.
 
-    parameters = initialize_parameters_deep(layers_dims)
+    parameters = initialize_parameters_he(layers_dims)
 
     
     # Loop (gradient descent)
@@ -133,10 +133,11 @@ def L_layer_model(X, Y, layers_dims, learning_rate = 0.0075, num_iterations = 30
 # calling GRADED FUNCTION: L_layer_model to start trainning
 parameters  = L_layer_model(train_x, train_y, layers_dims, num_iterations = 2500, print_cost = True)
 
-#calculating the Accuracy of trainning phase expected ~ 0.985645933014
+#calculating the Accuracy of trainning phase expected ~ 0.985645933014 useing normal initialization
+#calculating the Accuracy of trainning phase expected ~ 1 useing he initialization
 pred_train = predict(train_x, train_y, parameters)
 
-#calculating the Accuracy of our model in the test dataset expected ~ 0.8
+#calculating the Accuracy of our model in the test dataset expected ~ 0.8 useing normal initialization and he initialization.
 pred_test = predict(test_x, test_y, parameters)
 
 # This will show a few mislabeled images
